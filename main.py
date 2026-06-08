@@ -102,5 +102,5 @@ Vui lòng chọn giao dịch (1-4):
             case _:
                 print("Lựa chọn không hợp lệ. Vui lòng nhập lại")
 
-if __name__ == __main__:
+if __name__ == "__main__":
     main()
