@@ -19,12 +19,32 @@ user_account_balance = 10000000
 
 
 def display_balance():
+    '''
+    Display current account balance and ATM cash balance.
+
+    Args:
+        - None
+
+    Returns:
+        - None
+    '''
     print("--- SỐ DƯ TÀI KHOẢN ---")
     print(f"Tài khoản của bạn: {user_account_balance:,} VNĐ")
     print(f"(Debug) Tiền mặt trong ATM: {atm_vault_balance:,} VNĐ")
 
 
 def deposit_money(amount):
+    '''
+    Deposit money into user account and ATM vault.
+
+    Args:
+        - amount: int
+            Amount of money to deposit.
+
+    Returns:
+        - True
+            If deposit transaction is successful.
+    '''
     global atm_vault_balance
     global user_account_balance
     
@@ -36,6 +56,23 @@ def deposit_money(amount):
 
 
 def check_withdrawal_rules(amount):
+    '''
+    Validate withdrawal request and calculate total deduction.
+
+    Args:
+        - amount: int
+            Amount of money the user wants to withdraw.
+
+    Returns:
+        - tuple
+            (total_deduction, status)
+
+        Status:
+        - "INVALID_MULTIPLE"
+        - "INSUFFICIENT_FUNDS"
+        - "ATM_OUT_OF_CASH"
+        - "OK"
+    '''
     fee = 1100
     total_deduction = amount + fee
     
@@ -48,6 +85,19 @@ def check_withdrawal_rules(amount):
     return total_deduction, "OK"
 
 def execute_withdrawal(total_deduction, amount_to_dispense):
+    '''
+    Execute withdrawal transaction and update balances.
+
+    Args:
+        - total_deduction: int
+            Total amount deducted from user account.
+
+        - amount_to_dispense: int
+            Actual cash amount dispensed from ATM.
+
+    Returns:
+        - None
+    '''
     global user_account_balance
     global atm_vault_balance
 
@@ -59,6 +109,15 @@ def execute_withdrawal(total_deduction, amount_to_dispense):
     print(f"Số dư tài khoản còn lại: {user_account_balance:,}")
 
 def main():
+    '''
+    Run the main transaction loop of Smart ATM system.
+
+    Args:
+        - None
+
+    Returns:
+        - None
+    '''
     while True:
         print('''
 ============= SMART ATM =============

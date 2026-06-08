@@ -2,6 +2,23 @@ atm_vault_balance = 50000000
 user_account_balance = 10000000
 
 def check_withdrawal_rules(amount):
+    '''
+    Validate withdrawal request and calculate total deduction.
+
+    Args:
+        - amount: int
+            Amount of money the user wants to withdraw.
+
+    Returns:
+        - tuple
+            (total_deduction, status)
+
+        Status:
+        - "INVALID_MULTIPLE"
+        - "INSUFFICIENT_FUNDS"
+        - "ATM_OUT_OF_CASH"
+        - "OK"
+    '''
     fee = 1100
     total_deduction = amount + fee
     
@@ -14,6 +31,19 @@ def check_withdrawal_rules(amount):
     return total_deduction, "OK"
 
 def execute_withdrawal(total_deduction, amount_to_dispense):
+    '''
+    Execute withdrawal transaction and update balances.
+
+    Args:
+        - total_deduction: int
+            Total amount deducted from user account.
+
+        - amount_to_dispense: int
+            Actual cash amount dispensed from ATM.
+
+    Returns:
+        - None
+    '''
     global user_account_balance
     global atm_vault_balance
 

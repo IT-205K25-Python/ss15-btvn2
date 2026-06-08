@@ -2,6 +2,17 @@ atm_vault_balance = 50000000
 user_account_balance = 10000000
 
 def deposit_money(amount):
+    '''
+    Deposit money into user account and ATM vault.
+
+    Args:
+        - amount: int
+            Amount of money to deposit.
+
+    Returns:
+        - True
+            If deposit transaction is successful.
+    '''
     global atm_vault_balance
     global user_account_balance
     
