@@ -1,3 +1,19 @@
+# (1) Phân tích và thiết kế:
+#
+# Xác định rõ lúc nào cần truyền dữ liệu vào hàm qua Arguments, lúc nào hàm thao tác trực tiếp với Global Variables.
+# Cần truyền dữ liệu qua Arguments khi nhập dữ liệu và cần dùng dữ liệu đó để xử lý
+# Hàm cần thao tác trực tiếp với Global khi biến global có thể thị thay đổi giá trị thi thực hiện thao tác tính toán
+# - cần truyền Arguments:
+#  - Nhập vào số tiền cần nạp, cần rút và truyền vào để so sánh và xử lý đọc
+# - cần sử dụng global:
+#  - Khi thao tác tính toán trực tiếp và thay đổi giá trị vĩnh viên của 2 biến atm_vault_balance, user_account_balance
+
+# (2) Triển khai code:
+#
+# Khai báo đầy đủ tối thiểu 5 hàm (Ví dụ: main, display_balances, deposit_money, check_withdrawal_rules, execute_withdrawal).
+# Toàn bộ hàm phải có Docstring mô tả chuẩn mực tham số đầu vào và giá trị trả về.
+# Đặt tên biến tiếng Anh, định dạng snake_case.
+
 atm_vault_balance = 50000000
 user_account_balance = 10000000
 
